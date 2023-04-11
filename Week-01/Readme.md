@@ -65,6 +65,6 @@ To calculate the volume of a sphere:
 2. Cube the radius.
 3. Multiply the result of step 2 by 4/3 and by pi (3.14159).
 4. The resulting value is the volume of the sphere.
-
-
-https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/assets/evenVsOdds.jpg
+---
+Here is the flowchart representation of the algorithm:
+https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/main/assets/evenVsOdds.jpg
