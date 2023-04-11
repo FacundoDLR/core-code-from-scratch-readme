@@ -51,3 +51,17 @@ Two ways to represent your algorithm previously created
 Here is the flowchart representation of the algorithm:
 
 <p><img src="https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/main/assets/CerealMilk.jpg" alt="facundodlr" /></p>
+
+## (Tuesday) 💻
+
+## 1. Print my name & age
+### Description
+This challenge is similar to the previous guided challenge, but now you will try alone. For this challenge, you will need to create an algorithm in Pseudocode using PSeInt that prints your name and your age in separate lines, remeber that your name should be a string and your age a number
+
+### Solution 😎
+```PSeInt
+Algoritmo myNameAndAge
+	escribir 'Facundo Andres de los Rios'
+	escribir '26'
+FinAlgoritmo
+```
