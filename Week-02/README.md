@@ -78,8 +78,8 @@ P.S. If you like, you can try to do all 27 levels, but following level 15 we wil
 ### Solution 😎
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/main/assets/GameComplete27.jpg" alt="Code Game: Help the Lynx collect pine cones!">
-  <img src="https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/main/assets/SolutionGame27.jpg" alt="Code Game: Help the Lynx collect pine cones!">
+  <img src="https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/main/assets/GameComplete27.png" alt="Code Game: Help the Lynx collect pine cones!">
+  <img src="https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/main/assets/SolutionGame27.png" alt="Code Game: Help the Lynx collect pine cones!">
 </p>
 
 ## 2. Mod
