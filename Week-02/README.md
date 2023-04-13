@@ -65,3 +65,90 @@ Algoritmo myNameAndAge
 	escribir '26'
 FinAlgoritmo
 ```
+
+## (Wednesday) 💻
+
+## 1. Algorithm game
+
+### Description
+This will be a fun challenge, you will be playing a game base on simple commands, and the idea is for you to help the squirrel to take the pine cone. For this challenge try to pass the first 15 levels. We wish you all the luck and happy gaming.
+
+P.S. If you like, you can try to do all 27 levels, but following level 15 we will need more programming concepts, maybe you can go back to this challenge later 😉
+
+### Solution 😎
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FacundoDLR/core-code-from-scratch-readme/main/assets/GameComplete27.jpg" alt="Code Game: Help the Lynx collect pine cones!">
+</p>
+
+## 2. Mod
+
+### Description. Mod in PSeInt Challenge
+The challenge for you now is to create a PSeInt program that will receive a number from the user and add the mod operator using the even/odd case ( X % 2 ) where X is the user input
+
+### Solution 😎
+```PSeInt
+Algoritmo ModuloParImpar
+    // Solicitamos un número al usuario
+    Escribir "Ingrese un número:"
+    Leer num
+
+    // Calculamos el módulo 2 del número ingresado
+    resto = num % 2
+
+    // Verificamos si el número es par o impar
+    Si resto == 0 Entonces
+        Escribir "El número ingresado es par."
+    SiNo
+        Escribir "El número ingresado es impar."
+    FinSi
+
+FinAlgoritmo
+```
+
+## 3. Register form
+
+### Description
+You are given the task to create a registration form for new users, this form should ask the user for the following information:
+
+First name
+Last name
+Age
+Email
+Address
+At the end of the program, you should print all the information added from the user in a friendly way
+
+### Solution 😎
+
+```PSeInt
+Algoritmo RegistroDeUsuarios
+    // Solicitamos al usuario que ingrese su información
+    Escribir "Bienvenido al formulario de registro de usuarios"
+    Escribir "Por favor ingrese su información personal:"
+    Escribir " "
+	
+    Escribir "Nombre:"
+    Leer nombre
+	
+    Escribir "Apellido:"
+    Leer apellido
+	
+    Escribir "Edad:"
+    Leer edad
+	
+    Escribir "Email:"
+    Leer email
+	
+    Escribir "Dirección:"
+    Leer direccion
+	
+    // Imprimimos la información ingresada por el usuario
+    Escribir " "
+    Escribir "Gracias por registrarse! Aquí está su información personal:"
+    Escribir "Nombre completo: " + nombre + " " + apellido
+    Escribir "Edad: " + edad
+    Escribir "Email: " + email
+    Escribir "Dirección: " + direccion
+	
+FinAlgoritmo
+```
