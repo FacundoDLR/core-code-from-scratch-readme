@@ -153,3 +153,108 @@ Algoritmo RegistroDeUsuarios
 	
 FinAlgoritmo
 ```
+
+## (Thursday) 💻
+
+## 1. Truth tables
+### Description
+You are going to learn about three main logical operations used in programming, these operations are called AND, OR, and NOT. Each of the operations uses booleans as operands, and when applying the operations a result is generated, which is also a boolean, this is easier to check using the Truth Tables for each of the operations, now your task is for you to learn, and add the Truth Tables for each of the operations add them to your README and check if the following operations are correct by answering ✅ or ❌ at the end of each operation
+
+Operations:
+
+Remember that AND can be represented by &
+
+Remember that OR can be represented by |
+
+Remember that NOT can be represented by ~
+
+- T & T = T
+- T & F = F
+- F & T = T
+- F & F = F
+- T | T = T
+- T | F = F
+- F | T = T
+- F | F = F
+- ~T = T
+- ~F = T
+- (T & F) | (~F) = T
+- (T | F ) & (F | F) = T
+- ~((T | F ) & (F | F)) & F = T
+- ~((T | F ) & (F | F)) & T = F
+
+### Solution 😎
+
+- T & T = T ✅
+- T & F = F ✅
+- F & T = T ❌
+- F & F = F ✅
+- T | T = T ✅
+- T | F = F ❌
+- +F | T = T ✅
+- F | F = F ✅
+- ~T = T ❌
+- ~F = T ✅
+- (T & F) | (~F) = T ✅
+- (T | F ) & (F | F) = T ❌
+- ~((T | F ) & (F | F)) & F = T ❌
+- ~((T | F ) & (F | F)) & T = F ❌
+
+## 2. Boolean results
+### Description
+You have been assigned to verify and explain a code created by one of your colleagues, the idea is that you can describe the value that each variable has within the code as well as what was done for each line. What is expected of you is that you add comments below each line showing the value that the variable would have and a short explanation of how that value is reached.
+
+This is the code:
+
+```PSeInt
+Algoritmo boolean
+	a <- 5 == 3
+	b <- 4 <> 3
+	c <- 7 > 7
+	d <- 4 < 4
+	e <- 100 <= 90
+	f <- 40 >= 40
+FinAlgoritmo
+```
+
+### Solution 😎
+
+```PSeInt
+Algoritmo boolean
+	a <- 5 == 3 
+	// a is assigned the result of the equality comparison between 5 and 3, which is *false*
+	b <- 4 <> 3 
+	// b is assigned the result of the inequality comparison between 4 and 3, which is true
+	c <- 7 > 7 
+	// c is assigned the result of the greater-than comparison between 7 and 7, which is false
+	d <- 4 < 4 
+	// d is assigned the result of the less-than comparison between 4 and 4, which is false
+	e <- 100 <= 90 
+	// e is assigned the result of the less-than-or-equal-to comparison between 100 and 90, which is false
+	f <- 40 >= 40 
+	// f is assigned the result of the greater-than-or-equal-to comparison between 40 and 40, which is true
+FinAlgoritmo
+```
+
+## 3. Identify odd and even numbers
+### Description
+Remember the last challenge about the Mod operator? well, today your task will be to create a program that will be able to detect based on the user input if the number is odd or even. The process should be the following:
+
+The user enters a number
+Your algorithm detects if the number is odd or even (remember to use conditional statements Si...Entonces)
+Print ‘Número: x es par’ if the number is even (x is the number the user enters)
+Print ‘Número: x es impar’ if the number is odd (x is the number the user enters)
+
+### Solution 😎
+
+```PSeInt
+Algoritmo ParImpar
+	Escribir "Ingrese un número para verficar"
+	Leer num
+	Si num%2 == 0
+		Escribir "Número: ", num, " es par"
+	SiNo                       
+		Escribir "Número: ", num, " es impar"
+	FinSi
+FinAlgoritmo
+```
