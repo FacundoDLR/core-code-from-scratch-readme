@@ -223,18 +223,183 @@ FinAlgoritmo
 
 ## (Wednesday) 💻
 
+## 1. Multiplication Tables
+### Description
+For this challenge you will create a program to calculate the multiplication tables for a given number using While (Mientras). The user must enter a number and then the multiplication table for the number must be printed.
+
 ### Solution 😎
 
+```PSeInt
+Algoritmo MultiplicationTable
+	Imprimir '======= Multiplication Tables ======='
+	// Declaring variables
+	Definir num, i, result Como Entero
+	
+	// Getting user input
+	Escribir "Ingrese un numero para imprimir su tabla de multiplicar: "
+	Leer num
+	
+	// Initializing loop counter
+	i = 1
+	
+	// Printing multiplication table
+	Mientras (i <= 10) Hacer
+		result = num * i
+		Escribir num, " x ", i, " = ", result
+		i = i + 1
+	Fin Mientras
+	
+FinAlgoritmo
+```
 
+## 2. Simple calculator with Do While
+### Description
+For this challenge we are going to use the simple calculator that we made in the challenge 02 but now adding the functionality to perform a calculation again without finishing the program. The program should ask us if we want to use another operation and if the user answers yes then we can perform a new operation. To solve this challenge remember to use Do while (Repetir Hasta Que).
 
 ### Solution 😎
 
+```PSeInt
+Algoritmo calculadora
+	
+	Leer num1, num2, result
+	Leer operacion, respuesta
+	
+	Repetir
+		Escribir "Ingrese el primer número:"
+		Leer num1
+		
+		Escribir "Ingrese el segundo número:"
+		Leer num2
+		
+		Escribir "Ingrese la operación a realizar (+, -, *, /):"
+		Leer operacion
+		
+		Segun operacion Hacer
+			"+":
+				Escribir "Procesando: " , num1 , " + " , num2
+				result = num1 + num2
+				signoValido = Verdadero
+			"-":
+				Escribir "Procesando: " , num1 , " - " , num2
+				result = num1 - num2
+				signoValido = Verdadero
+			"*":
+				Escribir "Procesando: " , num1 , " * " , num2
+				result = num1 * num2
+				signoValido = Verdadero
+			"/":
+				Si num2 = 0 Entonces
+					Escribir "No se puede dividir entre cero"
+				Sino
+					result = num1 / num2
+					Escribir "Procesando: " , num1 , " / " , num2
+					signoValido = Verdadero
+				FinSi
+		Fin Segun
+		
+		Si signoValido Entonces
+			Escribir  result
+		SiNo
+			Escribir  "Operacion No valida"
+		FinSi
+			
+		Escribir "¿Desea realizar otra operación? (S/N)"
+		Leer respuesta
+	Mientras Que  respuesta = "S" | respuesta = "s"
 
+FinAlgoritmo
+```
 
 ## (Thursday) 💻
 
+## 1. Multiplication Tables with For
+### Description
+For this challenge you will create a program to calculate the multiplication tables for a given number using the For(Para) loop. The user must enter a number and then the multiplication table for the number must be printed.
+
 ### Solution 😎
 
-
+```PSeInt
+Algoritmo tabla_multiplicar
+	
+	Escribir "Ingrese un número:"
+	Leer numero
+	
+	Para i = 1 Hasta 10 Con Paso 1 Hacer
+		resultado <- numero * i
+		Escribir numero, " x ", i, " = ", resultado
+	FinPara
+	
+FinAlgoritmo
+```
+## 2. Ascending and Descending Numbers
+### Description
+For this challenge we are going to print numbers in ascending or descending order. The user must enter a number, then he must enter if he wants to print the numbers in ascending or descending order. If the user chooses ascending, the numbers will be printed from the number 0 to the number entered, otherwise the numbers will be printed descending from the number entered to the number 0.To solve this challenge remember to use the For(Para) loop.
 
 ### Solution 😎
+
+```PSeInt
+Algoritmo UpaAndDwnNum
+	
+	Escribir "======= Ascending and Descending Numbers ======="
+	Escribir "¡Deseas realizar operacion de Ascenso o Descenso? (A/D)"
+	Leer  respuesta
+	Escribir "Ingresa un numero"
+	Leer num
+	Si respuesta == "A" | respuesta == "a" Entonces
+		Para i = 0 Hasta num Con Paso 1 Hacer
+			Escribir i
+		Fin Para
+	SiNo
+		Para i=num Hasta 0 Con Paso -1 Hacer
+			Escribir i
+		Fin Para
+	Fin Si
+FinAlgoritmo
+```
+
+## 3. Greetings
+## Description
+For this challenge, you need to create a program that prints a greeting based on an hour entered. The program should do the following:
+
+- Print Buenos dias! if the hour is from 0 to 12
+- Print Buenas tardes! if the hour is from 13 to 18
+- Print Buenas noches! if the hour is from 19 to 23
+- Ask the user if he wants to perform another greeting. If the answer is Si, the program must start again.
+- At the end of the program, print out the number of times the program has greeted.
+
+### Solution 😎
+```PSeInt
+Algoritmo Cheers
+	
+	Escribir "===== Cheers ====="
+	contador = 0
+	
+	Repetir
+		Escribir "Ingrese la hora actual (0 - 23):"
+		Leer hora
+		
+		Si hora >= 0 & hora <= 12 Entonces
+			saludo = "Buenos dias!"
+		SiNo
+			Si hora >= 13 & hora <= 18 Entonces
+				saludo = "Buenas tardes!"
+			SiNo
+				Si hora >= 19 & hora <= 23 Entonces
+					saludo = "Buenas noches!"
+				SiNo
+					Escribir "Hora invalida. Ingrese un numero entre 0 y 23."
+				FinSi
+			FinSi
+		FinSi
+		
+		contador = contador +1
+		Escribir saludo
+		
+		Escribir "¿Quiere realizar otro saludo? (S/N)"
+		Leer respuesta
+		
+	Mientras Que respuesta = "S" | respuesta = "s"
+	Escribir "Saludos realizados: ",contador
+
+FinAlgoritmo
+```
