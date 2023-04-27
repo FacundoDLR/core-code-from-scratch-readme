@@ -128,20 +128,108 @@ FinAlgoritmo
 Make a program that asks for 5 values ​​and also allows us to know which one is furthest from zero, once obtained it returns that number (the numbers can be negative), showing only the integer part of the number.
 
 ### Solution 😎
+```PSeInt
+Algoritmo distanceToZero
+	Escribir 'Escribe un numero (Puede ser entero, decimal o negativo)'
+	Leer num
 
-### Description
-### Solution 😎
+	Para i=1 Hasta 4 Con Paso 1 Hacer
+		Escribir 'Escribe un nuevo numero'
+		leer newNum
+		Si abs(newNum) > abs(num) Entonces
+			num = newNum
+		Fin Si
+	Fin Para
+	escribir 'El valor mas alejado de 0(cero) es : ' , trunc(num)
+FinAlgoritmo
+```
 
+## 1. Toss coin
 ### Description
+From the data we receive first a name and a value, then another name and another value, using the built-in function aleatorio() we simulate the flip of a coin, We must return the name of the winner in capital letters and the value I win, to avoid cheating, if a player puts a value of zero or negative, the opponent automatically wins, in case both cheat, "game canceled" is returned.
 ### Solution 😎
+```PSeInt
+Funcion precioTotal <- result ( precio, IVA )
+	precioTotal = precio + (precio*IVA / 100)
+	si precio > 3000 Entonces
+		precioTotal = precioTotal - (precioTotal*0.1)
+	FinSi
+	
+	//escribir precioTotal
+Fin Funcion
+
+
+Algoritmo TotalPrice
+	escribir result(5000,21)
+	escribir result(3000,21)
+FinAlgoritmo
+```
 
 ## (Thursday) 💻
 
+## 1. Total price
 ### Description
-### Solution 😎
+Create a function called TotalPrice that takes 2 parameters, price and VAT, and returns the price including VAT. if the price exceeds 3000 a 10 percent discount is made on the total price.
 
-### Description
+### Expected output
+```PSeInt
+Algoritmo example_TotalPrice
+	Imprimir TotalPrice(5000,21)
+FinAlgoritmo
+```
 ### Solution 😎
+```PSeInt
+Funcion precioTotal <- result ( precio, IVA )
+	precioTotal = precio + (precio*IVA / 100)
+	si precio > 3000 Entonces
+		precioTotal = precioTotal - (precioTotal*0.1)
+	FinSi
+	
+	//escribir precioTotal
+Fin Funcion
 
+
+Algoritmo TotalPrice
+	escribir result(5000,21)
+	escribir result(3000,21)
+FinAlgoritmo
+```
+
+## 2. Reverse direction and size
 ### Description
+Create a function called ReverseDirectionAndSize that takes some text as a parameter and reverses it, eg: "Hello" -> "olleH" and also reverses the letters if they are uppercase to lowercase and if they are lowercase to uppercase, it should do something. like this:
+
+"HelLO" --> "olLEh"
+
+"Leonardo" --> "ODRANOEl"
+
+"Text" --> "TXEt"
+
+### Expected output
+```PSeInt
+Algoritmo example_ReverseDirectionAndSize
+	Imprimir ReverseDirectionAndSize("Hello")
+FinAlgoritmo
+```
 ### Solution 😎
+```PSeInt
+Funcion reverseName <- yourName ( name )
+	reverseName = ''
+	Para i<-Longitud(name) Hasta 0 Con Paso -1 Hacer
+		letter = Subcadena(name,i,i);
+		Si letter = Mayusculas(letter) Entonces
+			letter = Minusculas(letter)
+		SiNo
+			letter = Mayusculas(letter)
+		Fin Si
+		reverseName = Concatenar(reverseName, letter)
+	Fin Para
+Fin Funcion
+
+
+Algoritmo reverse_name
+	Escribir 'Escribe un nombre:'
+	Leer name
+	escribir yourName(name)
+FinAlgoritmo
+```
