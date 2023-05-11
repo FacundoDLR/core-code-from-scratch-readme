@@ -134,7 +134,13 @@ Create an if statement with the JavaScript syntax
 ### Expected output
 A piece of code with an if written in JavaScript
 ### Solution 😎
+```js
+let x = 10;
 
+if (x > 5) {
+  console.log("x is greater than 5");
+}
+```
 ## 2. 'WHILE' loop in JavaScript
 ### Description
 Create a while loop statement with the JavaScript syntax
@@ -142,7 +148,14 @@ Create a while loop statement with the JavaScript syntax
 ### Expected output
 A piece of code with a while using the JavaScript syntax
 ### Solution 😎
+```js
+let i = 0;
 
+while (i < 5) {
+  console.log("The value of i is: " + i);
+  i++;
+}
+```
 ## 3. 'FOR' loop in JavaScript
 ### Description
 Create a for loop with the JavaScript syntax
@@ -150,3 +163,8 @@ Create a for loop with the JavaScript syntax
 ### Expected output
 A piece of code with a for loop statement written in the JavaScript syntax
 ### Solution 😎
+```js
+for (let i = 0; i < 5; i++) {
+  console.log("The value of i is: " + i);
+}
+```
