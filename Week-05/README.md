@@ -34,9 +34,31 @@ Algoritmo exampleCompareDistances
 FinAlgoritmo
 ```
 ### Solution 😎
+```PSeInt
+Funcion result <- compareDistances()
+	sumPositives <- 0
+	sumNegatives <- 0
+	Para count = 1 Hasta 5 Con Paso 1 Hacer
+		leer num
+		si num > 0 Entonces
+			sumPositives = sumPositives + num;
+		SiNo
+			sumNegatives = sumNegatives + num;
+		FinSi
+	FinPara
+	result = sumPositives > Abs(sumNegatives)
+Fin Funcion
 
-
-
+Algoritmo compareDistancess
+	Imprimir "Ingrese 5 números:"
+	resultado <- compareDistances()
+	Si resultado Entonces
+		Imprimir resultado ," - La suma de los números positivos está más lejos de 0."
+	Sino
+		Imprimir resultado ," - La suma de los números negativos está más lejos de 0."
+	FinSi
+FinAlgoritmo
+```
 ## Week challenges (Tuesday) 💻
 
 ## 1. Sum of pairs
@@ -70,7 +92,21 @@ Algoritmo exampleMidpPoint
 FinAlgoritmo
 ```
 ### Solution 😎
+```PSeInt
+Funcion result <- midPoint (valor1, valor2)
+	// Calculate the midpoint between the two values
+	result = (valor1 + valor2) / 2
+	
+	// Return the midpoint
+	escribir result
+FinFuncion
 
+Algoritmo exampleMidPoint
+// Call the midPoint function with the values 40 and 80
+Imprimir midPoint(40, 80)
+
+FinAlgoritmo
+```
 
 ## Week challenges (Wednesday) 💻
 
