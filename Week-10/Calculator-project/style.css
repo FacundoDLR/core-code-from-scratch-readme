@@ -1,6 +1,6 @@
 body{
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
     justify-content: center;
     align-items: center;
     background-color: #c4ccdd;
@@ -63,6 +63,11 @@ body{
 .equal{
     background-color: #ee6c4d;
     color: #FFF;
+}
+
+.operation.selected{
+    background-color: #FFF;
+    color: #ee6c4d;
 }
 
 .number{

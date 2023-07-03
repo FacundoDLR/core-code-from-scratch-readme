@@ -1,8 +1,18 @@
+/* --------- UTIL --------- */
+let memory = [];
+let selectedOperator = null;
+const equalHandler = () => {
+    const currentValue = display.innerHTML;
+    const result = eval(`${memory.join(' ')} ${currentValue}`);
+    setDisplayValue(result);
+    memory = [];
+};
+
 /* --------- Display --------- */
 const display = document.querySelector('#display');
 const setDisplayValue = (value) => {
     display.innerHTML = value;
-}
+};
 
 /* --------- Numbers --------- */
 const zero = document.querySelector('#zero');
@@ -15,8 +25,6 @@ const six = document.querySelector('#six');
 const seven = document.querySelector('#seven');
 const eight = document.querySelector('#eight');
 const nine = document.querySelector('#nine');
-
-zero.addEventListener('click', () => console.log('Hola'))
 
 const numbers = [
     zero,
@@ -33,27 +41,44 @@ const numbers = [
 
 numbers.forEach((el, index) => {
     el.addEventListener('click', () => {
+
         const currentValue = display.innerHTML;
         let newValue = `${currentValue}${index}`
-        if(currentValue === '0'){
+        if(currentValue === '0' || selectedOperator !== null){
             newValue = index;
-        }
+        };
         setDisplayValue(newValue);
-    })
+
+        if(selectedOperator !== null){
+            selectedOperator.classList.remove('selected');
+            selectedOperator = null;
+        };
+    });
 });
 
 /* --------- AC --------- */
 const ac = document.querySelector('#ac');
 ac.addEventListener('click', () => {
+    if(selectedOperator !== null){
+        selectedOperator.classList.remove('selected');
+    };
     setDisplayValue(0);
+    memory = [];
 });
 
 /* --------- Sign --------- */
 const sig = document.querySelector('#sig');
 sig.addEventListener('click', () => {
     let currentValue = Number(display.innerHTML);
-    setDisplayValue(currentValue * -1);
-})
+    const inverseValue = currentValue * -1;
+    setDisplayValue(inverseValue);
+    if(memory.length === 2){
+        memory = [
+            inverseValue,
+            memory.pop(),
+        ]
+    };
+});
 
 /* --------- Dot --------- */
 const dot = document.querySelector('#dot');
@@ -61,5 +86,48 @@ dot.addEventListener('click', () => {
     const currentValue = display.innerHTML;
     if(!currentValue.includes('.')){
         setDisplayValue(`${currentValue}.`)
-    }
-})
+    };
+});
+
+/* --------- Percent --------- */
+const percent = document.querySelector('#percent');
+percent.addEventListener('click', () => {
+    let currentValue = Number(display.innerHTML);
+    currentValue /= 100;
+    setDisplayValue(currentValue)
+});
+
+/* --------- Operators --------- */
+const div = document.querySelector('#div');
+const mul = document.querySelector('#mul');
+const sum = document.querySelector('#sum');
+const sub = document.querySelector('#sub');
+
+const operators = [
+    {el: div, sign: '/'},
+    {el: mul, sign: '*'},
+    {el: sum, sign: '+'},
+    {el: sub, sign: '-'},
+];
+
+operators.forEach((operator) => {
+    operator.el.addEventListener('click', () => {
+        const currentValue = Number(display.innerHTML);
+        if(memory.length === 0){
+            memory.push(currentValue)
+        }
+        if(memory.length === 2){
+            memory.pop();
+        }
+        if(selectedOperator !== null){
+            selectedOperator.classList.remove('selected');
+        }
+        memory.push(operator.sign);
+        operator.el.classList.add('selected');
+        selectedOperator = operator.el;
+    });
+});
+
+/* --------- Equal --------- */
+const equal = document.querySelector('#equal');
+equal.addEventListener('click', equalHandler);
